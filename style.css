@@ -191,16 +191,15 @@ textarea {
     position: relative;
     overflow: hidden;
 
-    background-color: #f7f3ec;
     background-image:
-        linear-gradient(
-    to right,
-    rgba(247, 243, 236, 0.82) 0%,
-    rgba(247, 243, 236, 0.58) 35%,
-    rgba(247, 243, 236, 0.12) 70%,
-    rgba(184, 147, 83, 0.712) 100%
-)
-        url("hero.jpg");
+    linear-gradient(
+        to right,
+        rgba(247, 243, 236, 0.82) 0%,
+        rgba(247, 243, 236, 0.58) 35%,
+        rgba(247, 243, 236, 0.12) 70%,
+        rgba(184, 147, 83, 0.35) 100%
+    ),
+    url("hero.jpg");
 
     background-size: cover, cover;
     background-position: center, right center;
@@ -2137,7 +2136,7 @@ footer .copyright {
             rgba(247, 243, 236, 0.25) 70%,
             rgba(247, 243, 236, 0.05) 100%
         ),
-        url("hero.jpg");
+        url("images/hero.jpg");
     background-size: cover, cover;
     background-position: center, right center;
     background-repeat: no-repeat, no-repeat;
@@ -2389,16 +2388,17 @@ footer .copyright {
         padding: 65px 25px;
         align-items: center;
         background-image:
-            linear-gradient(
-    to right,
-    rgba(247, 243, 236, 0.82) 0%,
-    rgba(247, 243, 236, 0.58) 65%,
-    rgba(247, 243, 236, 0.20) 100%
-)
-            url("hero.jpg");
-        background-size: cover, cover;
-        background-position: center, 62% center;
-        background-repeat: no-repeat, no-repeat;
+    linear-gradient(
+        to right,
+        rgba(247, 243, 236, 0.82) 0%,
+        rgba(247, 243, 236, 0.58) 65%,
+        rgba(247, 243, 236, 0.20) 100%
+    ),
+    url("hero.jpg");
+
+background-size: cover, cover;
+background-position: center, 62% center;
+background-repeat: no-repeat, no-repeat;
     }
 
     .hero-content {
@@ -2564,7 +2564,7 @@ footer .copyright {
             rgba(33, 31, 28, 0.12),
             rgba(33, 31, 28, 0.12)
         ),
-        url("hero.jpg") !important;
+        url("images/hero.jpg") !important;
     background-size: cover, cover !important;
     background-position: center, right center !important;
     background-repeat: no-repeat, no-repeat !important;
