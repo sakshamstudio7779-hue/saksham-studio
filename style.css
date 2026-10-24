@@ -2559,19 +2559,31 @@ background-repeat: no-repeat, no-repeat;
 /* FINAL HERO IMAGE FIX */
 .hero {
     background-color: #f7f3ec !important;
+
     background-image:
         linear-gradient(
-            rgba(33, 31, 28, 0.12),
-            rgba(33, 31, 28, 0.12)
+            to right,
+            rgba(247, 243, 236, 0.72) 0%,
+            rgba(247, 243, 236, 0.42) 40%,
+            rgba(247, 243, 236, 0.08) 100%
         ),
-        url("hero.jpg") !important;
+        url("./hero.jpg") !important;
+
     background-size: cover, cover !important;
-    background-position: center, right center !important;
+    background-position: center, center !important;
     background-repeat: no-repeat, no-repeat !important;
 }
 
 @media (max-width: 650px) {
     .hero {
+        background-image:
+            linear-gradient(
+                to right,
+                rgba(247, 243, 236, 0.72),
+                rgba(247, 243, 236, 0.25)
+            ),
+            url("./hero.jpg") !important;
+
         background-position: center, 62% center !important;
     }
 }
