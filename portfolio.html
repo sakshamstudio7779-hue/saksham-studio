@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio | Saksham Studio Photography</title>
+
+<meta name="description" content="Explore wedding, pre-wedding, event, portrait, baby shower and baby photography by Saksham Studio Photography.">
+
+<style>
+:root {
+  --cream: #f8f5ef;
+  --gold: #b99a63;
+  --dark: #f5da77;
+  --muted: #ebddc2;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+}
+
+body {
+  background: var(--cream);
+  color: var(--dark);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+/* HEADER */
+
+header {
+  min-height: 82px;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background: rgba(248, 245, 239, 0.97);
+  border-bottom: 1px solid #e6dfd2;
+}
+
+.brand {
+  font-size: 22px;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.brand span {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  margin-top: 6px;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  font: 12px Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+nav a {
+  transition: color .25s;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+/* HERO SECTION */
+
+.hero {
+  min-height: 440px;
+  padding: 85px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background:
+    linear-gradient(rgba(25,23,20,.48), rgba(25,23,20,.60)),
+    url("images/portfolio-cover.jpg") center 45% / cover no-repeat;
+  color: white;
+}
+
+.hero-content {
+  max-width: 760px;
+}
+
+.eyebrow {
+  color: #e1c796;
+  font: 11px Arial, sans-serif;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 7vw, 76px);
+  font-weight: normal;
+  line-height: 1.15;
+  margin: 20px 0;
+}
+
+.hero p {
+  font: 16px/1.9 Arial, sans-serif;
+  color: #f0ece5;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.hero-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 25px;
+  border: 1px solid #d9bd88;
+  color: white;
+  font: 11px Arial, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: .25s;
+}
+
+.hero-button:hover {
+  background: var(--gold);
+  color: white;
+}
+
+/* INTRODUCTION */
+
+.intro {
+  text-align: center;
+  max-width: 760px;
+  margin: 75px auto 35px;
+  padding: 0 22px;
+}
+
+.intro .eyebrow {
+  color: var(--gold);
+}
+
+.intro h2 {
+  font-size: clamp(30px, 4vw, 43px);
+  font-weight: normal;
+  line-height: 1.3;
+  margin: 15px 0;
+}
+
+.intro p {
+  font: 14px/1.9 Arial, sans-serif;
+  color: var(--muted);
+}
+
+/* PORTFOLIO FILTERS */
+
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.filter-btn {
+  padding: 12px 18px;
+  background: transparent;
+  border: 1px solid #d9d0c0;
+  border-radius: 0;
+  color: var(--dark);
+  cursor: pointer;
+  font: 11px Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: .25s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--dark);
+  color: white;
+  border-color: var(--dark);
+}
+
+/* PHOTO GALLERY */
+
+.gallery {
+  width: min(1440px, 100%);
+  padding: 0 6%;
+  margin: 0 auto 90px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.photo-card {
+  position: relative;
+  overflow: hidden;
+  background: #e7e0d4;
+  cursor: pointer;
+  aspect-ratio: 4 / 5;
+  border: 0;
+  padding: 0;
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.photo-card[hidden] {
+  display: none;
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s ease;
+}
+
+.photo-card:hover img {
+  transform: scale(1.055);
+}
+
+.photo-caption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 45px 18px 20px;
+  text-align: left;
+  color: white;
+  background: linear-gradient(transparent, rgba(0,0,0,.72));
+  pointer-events: none;
+}
+
+.photo-caption small {
+  display: block;
+  font: 10px Arial, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #e5ca98;
+  margin-bottom: 7px;
+}
+
+.photo-caption strong {
+  font-size: 21px;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+.photo-card:focus-visible,
+.filter-btn:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* BOOKING SECTION */
+
+.booking {
+  text-align: center;
+  padding: 85px 20px;
+  background: #302e27;
+  color: white;
+}
+
+.booking .eyebrow {
+  color: #d7b779;
+}
+
+.booking h2 {
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.3;
+  font-weight: normal;
+  margin: 18px 0;
+}
+
+.booking p {
+  color: #ddd7cc;
+  font: 14px/1.8 Arial, sans-serif;
+}
+
+.booking a {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 15px 25px;
+  background: var(--gold);
+  color: white;
+  font: 11px Arial, sans-serif;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: background .25s;
+}
+
+.booking a:hover {
+  background: #9d7d47;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 28px 20px;
+  text-align: center;
+  font: 12px/2 Arial, sans-serif;
+  color: var(--muted);
+}
+
+footer a {
+  color: var(--dark);
+}
+
+footer a:hover {
+  color: var(--gold);
+}
+
+/* FULL-SCREEN PHOTO VIEWER */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  background: rgba(15, 14, 12, .94);
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 82vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 25px;
+  color: white;
+  background: transparent;
+  border: 0;
+  font: 36px Arial, sans-serif;
+  cursor: pointer;
+}
+
+/* TABLET */
+
+@media (max-width: 850px) {
+  header {
+    padding: 18px 5%;
+  }
+
+  nav {
+    gap: 13px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0 4%;
+    gap: 12px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 560px) {
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 10px;
+  }
+
+  .hero {
+    min-height: 340px;
+    padding: 65px 18px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .intro {
+    margin-top: 55px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  .photo-caption {
+    padding: 30px 9px 12px;
+  }
+
+  .photo-caption strong {
+    font-size: 15px;
+  }
+
+  .photo-caption small {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .filter-btn {
+    padding: 10px 12px;
+    font-size: 10px;
+    letter-spacing: .5px;
+  }
+
+  .booking {
+    padding: 65px 18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <a class="brand" href="index.html">
+    SAKSHAM STUDIO
+    <span>PHOTOGRAPHY</span>
+  </a>
+
+  <nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="#gallery">Portfolio</a>
+    <a href="#booking">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">Saksham Studio Photography</div>
+
+    <h1>Stories in Every Frame</h1>
+
+    <p>
+      Every moment has a story. We capture the emotions,
+      the details and the memories that last a lifetime.
+    </p>
+
+    <a class="hero-button" href="#gallery">
+      Explore Our Work
+    </a>
+  </div>
+</section>
+
+<!-- PORTFOLIO INTRODUCTION -->
+
+<section class="intro">
+  <div class="eyebrow">Our Selected Work</div>
+
+  <h2>A Collection of Memories</h2>
+
+  <p>
+    From the magic of weddings and joyful celebrations
+    to the precious first moments of a baby's life,
+    discover the stories we capture through photography.
+  </p>
+</section>
+
+<!-- CATEGORY FILTERS -->
+
+<div class="filters" aria-label="Filter portfolio photographs">
+
+  <button class="filter-btn active"
+          data-filter="all"
+          aria-pressed="true">
+    All Work
+  </button>
+
+  <button class="filter-btn"
+          data-filter="wedding"
+          aria-pressed="false">
+    Weddings
+  </button>
+
+  <button class="filter-btn"
+          data-filter="prewedding"
+          aria-pressed="false">
+    Pre-Weddings
+  </button>
+  
+  <button class="filter-btn"
+        data-filter="engagement"
+        aria-pressed="false">
+  Engagement &amp; Celebration
+  </button>
+
+  <button class="filter-btn"
+        data-filter="maternity"
+        aria-pressed="false">
+  Maternity
+  </button>
+
+  <button class="filter-btn"
+          data-filter="events"
+          aria-pressed="false">
+    Events
+  </button>
+
+  <button class="filter-btn"
+          data-filter="baby-shower"
+          aria-pressed="false">
+    Baby Shower
+  </button>
+
+  <button class="filter-btn"
+          data-filter="baby"
+          aria-pressed="false">
+    Baby Photography
+  </button>
+
+  <button class="filter-btn"
+          data-filter="portraits"
+          aria-pressed="false">
+    Portraits
+  </button>
+
+</div>
+
+<!-- PHOTO GALLERY -->
+
+<main id="gallery" class="gallery">
+
+  <!-- WEDDING PHOTOS -->
+
+  <button class="photo-card"
+          data-category="wedding"
+          aria-label="Enlarge wedding photograph">
+    <img src="images/wedding-1.jpg"
+         alt="Wedding photography"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Wedding Stories</small>
+      <strong>A Day to Remember</strong>
+    </span>
+  </button>
+
+  <button class="photo-card"
+          data-category="wedding"
+          aria-label="Enlarge wedding photograph">
+    <img src="images/wedding-2.jpg"
+         alt="Wedding celebration"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Wedding Stories</small>
+      <strong>Beautiful Beginnings</strong>
+    </span>
+  </button>
+
+  <button class="photo-card"
+          data-category="wedding"
+          aria-label="Enlarge wedding photograph">
+    <img src="images/wedding-3.jpg"
+         alt="Wedding candid moment"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Wedding Stories</small>
+      <strong>Moments of Love</strong>
+    </span>
+  </button>
+
+  <!-- PRE-WEDDING PHOTOS -->
+
+  <button class="photo-card"
+          data-category="prewedding"
+          aria-label="Enlarge pre-wedding photograph">
+    <img src="images/prewedding-1.jpg"
+         alt="Pre-wedding couple photography"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Pre-Wedding</small>
+      <strong>Just the Two of Us</strong>
+    </span>
+  </button>
+
+  <button class="photo-card"
+          data-category="prewedding"
+          aria-label="Enlarge pre-wedding photograph">
+    <img src="images/prewedding-2.jpg"
+         alt="Romantic pre-wedding photography"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Pre-Wedding</small>
+      <strong>Our Kind of Forever</strong>
+    </span>
+  </button>
+
+  <button class="photo-card"
+          data-category="prewedding"
+          aria-label="Enlarge pre-wedding photograph">
+    <img src="images/prewedding-3.jpg"
+         alt="Outdoor pre-wedding photoshoot"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Pre-Wedding</small>
+      <strong>Love in Every Frame</strong>
+    </span>
+  </button>
+
+  <!-- EVENT PHOTOS -->
+
+  <button class="photo-card"
+          data-category="events"
+          aria-label="Enlarge event photograph">
+    <img src="images/event-1.jpg"
+         alt="Event photography"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Celebrations</small>
+      <strong>Moments Together</strong>
+    </span>
+  </button>
+
+  <button class="photo-card"
+          data-category="events"
+          aria-label="Enlarge event photograph">
+    <img src="images/event-2.jpg"
+         alt="Celebration photography"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Celebrations</small>
+      <strong>Joyful Memories</strong>
+    </span>
+  </button>
+
+  <button class="photo-card"
+          data-category="events"
+          aria-label="Enlarge event photograph">
+    <img src="images/event-3.jpg"
+         alt="Special event candid photograph"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Celebrations</small>
+      <strong>Every Detail Matters</strong>
+    </span>
+  </button>
+  
+  <!-- ENGAGEMENT & CELEBRATION PHOTOS -->
+
+  <button class="photo-card"
+          data-category="engagement"
+          aria-label="Enlarge engagement photograph">
+    <img src="images/engagement-celebration-1.jpg"
+         alt="Engagement celebration photography"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Engagement &amp; Celebration</small>
+      <strong>A Promise of Forever</strong>
+    </span>
+  </button>
+
+  <button class="photo-card"
+          data-category="engagement"
+          aria-label="Enlarge engagement photograph">
+    <img src="images/engagement-celebration-2.jpg"
+         alt="Engagement celebration moments"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Engagement &amp; Celebration</small>
+      <strong>Love Worth Celebrating</strong>
+    </span>
+  </button>
+
+  <button class="photo-card"
+          data-category="engagement"
+          aria-label="Enlarge celebration photograph">
+    <img src="images/engagement-celebration-3.jpg"
+         alt="Special engagement celebration"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Engagement &amp; Celebration</small>
+      <strong>Moments to Remember</strong>
+    </span>
+  </button>
+
+  <!-- MATERNITY PHOTOS -->
+
+  <button class="photo-card"
+          data-category="maternity"
+          aria-label="Enlarge maternity photograph">
+    <img src="images/maternity-1.jpg"
+         alt="Maternity photography"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Maternity Photography</small>
+      <strong>A Beautiful Beginning</strong>
+    </span>
+  </button>
+
+  <button class="photo-card"
+          data-category="maternity"
+          aria-label="Enlarge maternity photograph">
+    <img src="images/maternity-2.jpg"
+         alt="Motherhood portrait"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Maternity Photography</small>
+      <strong>Motherhood in Bloom</strong>
+    </span>
+  </button>
+
+  <button class="photo-card"
+          data-category="maternity"
+          aria-label="Enlarge maternity photograph">
+    <img src="images/maternity-3.jpg"
+         alt="Maternity portrait photography"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Maternity Photography</small>
+      <strong>Moments of Pure Love</strong>
+    </span>
+  </button>
+
+  <!-- BABY SHOWER PHOTOS -->
+
+  <button class="photo-card"
+          data-category="baby-shower"
+          aria-label="Enlarge baby shower photograph">
+    <img src="images/baby-shower-1.jpg"
+         alt="Baby shower celebration"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Baby Shower</small>
+      <strong>A Celebration of New Beginnings</strong>
+    </span>
+  </button>
+
+  <button class="photo-card"
+          data-category="baby-shower"
+          aria-label="Enlarge baby shower photograph">
+    <img src="images/baby-shower-2.jpg"
+         alt="Baby shower decorations and family celebration"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Baby Shower</small>
+      <strong>Love Before Hello</strong>
+    </span>
+  </button>
+
+  <button class="photo-card"
+          data-category="baby-shower"
+          aria-label="Enlarge baby shower photograph">
+    <img src="images/baby-shower-3.jpg"
+         alt="Memorable baby shower moments"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Baby Shower</small>
+      <strong>Waiting for Our Little Miracle</strong>
+    </span>
+  </button>
+
+  <!-- BABY PHOTOGRAPHY PHOTOS -->
+
+  <button class="photo-card"
+          data-category="baby"
+          aria-label="Enlarge baby photograph">
+    <img src="images/baby-1.jpg"
+         alt="Baby portrait photography"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Baby Photography</small>
+      <strong>Our Little Miracle</strong>
+    </span>
+  </button>
+
+  <button class="photo-card"
+          data-category="baby"
+          aria-label="Enlarge baby photograph">
+    <img src="images/baby-2.jpg"
+         alt="Baby milestone portrait"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Baby Photography</small>
+      <strong>Little Moments, Big Love</strong>
+    </span>
+  </button>
+
+  <button class="photo-card"
+          data-category="baby"
+          aria-label="Enlarge baby photograph">
+    <img src="images/baby-3.jpg"
+         alt="Baby photoshoot"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Baby Photography</small>
+      <strong>Small Wonders</strong>
+    </span>
+  </button>
+
+  <!-- PORTRAIT PHOTOS -->
+
+  <button class="photo-card"
+          data-category="portraits"
+          aria-label="Enlarge portrait photograph">
+    <img src="images/portrait-1.jpg"
+         alt="Portrait photography"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Portraits</small>
+      <strong>Simply You</strong>
+    </span>
+  </button>
+
+  <button class="photo-card"
+          data-category="portraits"
+          aria-label="Enlarge portrait photograph">
+    <img src="images/portrait-2.jpg"
+         alt="Personal portrait session"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Portraits</small>
+      <strong>Natural Beauty</strong>
+    </span>
+  </button>
+
+  <button class="photo-card"
+          data-category="portraits"
+          aria-label="Enlarge portrait photograph">
+    <img src="images/portrait-3.jpg"
+         alt="Portrait session photography"
+         loading="lazy">
+    <span class="photo-caption">
+      <small>Portraits</small>
+      <strong>A Moment of Your Own</strong>
+    </span>
+  </button>
+
+</main>
+
+<!-- WHATSAPP BOOKING -->
+
+<section class="booking" id="booking">
+  <div class="eyebrow">Let's Create Something Beautiful</div>
+
+  <h2>Your Story Deserves to Be Remembered</h2>
+
+  <p>
+    From weddings to baby showers and baby portraits,
+    let's capture your precious moments together.
+  </p>
+
+  <a href="https://wa.me/917841080180"
+     target="_blank"
+     rel="noopener noreferrer">
+    Book Your Photography
+  </a>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <p>
+    © <span id="year"></span> Saksham Studio Photography
+  </p>
+
+  <p>
+    <a href="index.html">Home</a> ·
+    <a href="https://www.instagram.com/sakshams_studio/"
+       target="_blank"
+       rel="noopener noreferrer">
+      Instagram
+    </a>
+  </p>
+</footer>
+
+<!-- FULL-SCREEN PHOTO VIEWER -->
+
+<div class="lightbox"
+     id="lightbox"
+     role="dialog"
+     aria-modal="true"
+     aria-label="Photograph viewer">
+
+  <button class="lightbox-close"
+          id="closeLightbox"
+          aria-label="Close photograph viewer">
+    &times;
+  </button>
+
+  <img id="lightboxImage" src="" alt="">
+</div>
+
+<script>
+/* PORTFOLIO FILTERS */
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const photoCards = document.querySelectorAll(".photo-card");
+
+filterButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const category = button.dataset.filter;
+
+    filterButtons.forEach(item => {
+      const active = item === button;
+
+      item.classList.toggle("active", active);
+      item.setAttribute("aria-pressed", String(active));
+    });
+
+    photoCards.forEach(card => {
+      card.hidden =
+        category !== "all" &&
+        card.dataset.category !== category;
+    });
+  });
+});
+
+/* PHOTO VIEWER */
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const closeButton = document.getElementById("closeLightbox");
+
+photoCards.forEach(card => {
+  card.addEventListener("click", () => {
+    const image = card.querySelector("img");
+
+    if (!image.complete || image.naturalWidth === 0) {
+      alert(
+        "This photo could not be loaded. Please check the image filename and location."
+      );
+      return;
+    }
+
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+
+    lightbox.classList.add("open");
+    closeButton.focus();
+  });
+});
+
+/* CLOSE PHOTO VIEWER */
+
+function closeLightbox() {
+  lightbox.classList.remove("open");
+  lightboxImage.src = "";
+}
+
+closeButton.addEventListener("click", closeLightbox);
+
+lightbox.addEventListener("click", event => {
+  if (event.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    closeLightbox();
+  }
+});
+
+/* AUTOMATIC COPYRIGHT YEAR */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>

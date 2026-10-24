@@ -1,0 +1,2610 @@
+/* ================================
+   SAKSHAM'S STUDIO
+   PREMIUM PHOTOGRAPHY WEBSITE
+================================ */
+
+
+/* ---------- BASIC RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #f7f3ec;
+    color: #211f1c;
+    line-height: 1.7;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+/* ---------- NAVIGATION ---------- */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    min-height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: rgba(247, 243, 236, 0.96);
+
+    border-bottom: 1px solid #ded7cc;
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* PREMIUM STUDIO LOGO */
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+    flex-shrink: 0;
+    color: #211f1c;
+}
+
+.logo span {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    color: #211f1c;
+}
+
+.logo small {
+    align-self: center;
+    margin-top: 7px;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 6px;
+    color: #a78350;
+}
+
+/* NAV LINKS */
+
+.navbar nav {
+    display: flex;
+
+    gap: 35px;
+}
+
+
+.navbar nav a {
+    position: relative;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    transition: 0.3s ease;
+}
+
+
+.navbar nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 1px;
+
+    background: #a78350;
+
+    transition: width 0.3s ease;
+}
+
+
+.navbar nav a:hover {
+    color: #a78350;
+}
+
+
+.navbar nav a:hover::after {
+    width: 100%;
+}
+
+
+/* NAV BUTTON */
+
+.nav-button {
+    padding: 12px 22px;
+
+    background: #bba789;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    transition: 0.3s ease;
+
+    flex-shrink: 0;
+}
+
+
+.nav-button:hover {
+    background: #a78350;
+
+    transform: translateY(-2px);
+}
+
+
+/* ---------- HERO ---------- */
+
+.hero {
+    min-height: calc(100vh - 82px);
+    padding: 100px 8%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    background-color: #f7f3ec;
+    background-image:
+        linear-gradient(
+    to right,
+    rgba(247, 243, 236, 0.82) 0%,
+    rgba(247, 243, 236, 0.58) 35%,
+    rgba(247, 243, 236, 0.12) 70%,
+    rgba(184, 147, 83, 0.712) 100%
+)
+        url("images/hero.jpg");
+
+    background-size: cover, cover;
+    background-position: center, right center;
+    background-repeat: no-repeat, no-repeat;
+}
+
+/* PREMIUM SS MONOGRAM */
+
+.hero::before {
+    content: "SS";
+    position: absolute;
+    right: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(180px, 25vw, 380px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -12px;
+
+    color: hsla(37, 76%, 68%, 0.24);
+    mix-blend-mode: multiply;
+
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+}
+
+/* HERO CONTENT */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+}
+
+.eyebrow,
+.section-label {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: #a78350;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 7.5vw, 110px);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -4px;
+    max-width: 850px;
+}
+
+.hero h1 em,
+h2 em {
+    color: #a78350;
+    font-weight: 400;
+}
+
+.hero-text {
+    max-width: 520px;
+    margin-top: 38px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #e6c598;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+/* ---------- HERO SCROLL ---------- */
+
+.hero-scroll {
+    position: absolute;
+    right: 6%;
+    bottom: 35px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: #817f7b;
+}
+
+.hero-scroll div {
+    width: 45px;
+    height: 1px;
+    background: #a78350;
+}
+
+
+
+/* PREMIUM MONOGRAM */
+
+.hero::before {
+    content: "SS";
+
+    position: absolute;
+
+    right: 7%;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(220px, 30vw, 500px);
+
+    line-height: 1;
+
+    color: rgba(250, 209, 152, 0.479);
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 760px;
+}
+
+
+.eyebrow,
+.section-label {
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    color: #a78350;
+
+    text-transform: uppercase;
+
+    margin-bottom: 25px;
+}
+
+
+.hero h1 {
+    font-size: clamp(60px, 7.5vw, 110px);
+
+    font-weight: 400;
+
+    line-height: 0.9;
+
+    letter-spacing: -4px;
+
+    max-width: 850px;
+}
+
+
+.hero h1 em,
+h2 em {
+    color: #ad8c5d;
+
+    font-weight: 400;
+}
+
+
+.hero-text {
+    max-width: 520px;
+
+    margin-top: 38px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    color: #dba665;
+}
+
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+
+/* ---------- BUTTONS ---------- */
+
+.button {
+    display: inline-block;
+
+    padding: 16px 30px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+
+    transition: 0.4s ease;
+}
+
+
+.button.primary {
+    background: #9c7f54;
+
+    color: rgb(58, 45, 45);
+
+    border: 1px solid #211f1c;
+}
+
+
+.button.primary:hover {
+    background: #a78350;
+
+    border-color: #a78350;
+
+    transform: translateY(-2px);
+}
+
+
+.button.secondary {
+    border: 1px solid #211f1c;
+
+    background: transparent;
+}
+
+
+.button.secondary:hover {
+    background: #211f1c;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* ---------- HERO SCROLL ---------- */
+
+.hero-scroll {
+    position: absolute;
+
+    right: 6%;
+
+    bottom: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    color: #8b8379;
+}
+
+
+.hero-scroll div {
+    width: 45px;
+
+    height: 1px;
+
+    background: #a78350;
+}
+
+
+/* ---------- INTRO ---------- */
+
+.intro {
+    padding: 150px 15%;
+
+    text-align: center;
+
+    background: #ebe2d3;
+}
+
+
+.intro h2 {
+    font-size: clamp(45px, 5vw, 75px);
+
+    line-height: 1;
+
+    font-weight: 400;
+}
+
+
+.intro > p:last-child {
+    max-width: 700px;
+
+    margin: 35px auto 0;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    color: #625c54;
+}
+
+
+/* ---------- PORTFOLIO ---------- */
+
+.portfolio {
+    padding: 120px 8%;
+
+    background: #f7f3ec;
+}
+
+
+.section-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 60px;
+}
+
+
+.section-heading h2 {
+    font-size: clamp(45px, 5vw, 70px);
+
+    font-weight: 400;
+
+    line-height: 1;
+}
+
+
+.section-heading > p {
+    max-width: 350px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    color: #716a61;
+}
+
+
+/* ---------- PORTFOLIO GRID ---------- */
+
+.portfolio-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 45px;
+}
+
+
+.portfolio-card {
+    overflow: hidden;
+}
+
+
+.photo-placeholder {
+    height: 500px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #e5ddd1;
+
+    color: #9b8d7b;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    transition: 0.5s ease;
+
+    overflow: hidden;
+}
+
+
+.photo-placeholder span {
+    pointer-events: none;
+}
+
+
+.portfolio-card:hover .photo-placeholder {
+    transform: scale(1.01);
+}
+
+
+.portfolio-card h3 {
+    margin-top: 20px;
+
+    font-size: 25px;
+
+    font-weight: 400;
+}
+
+
+.portfolio-card > p {
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    color: #8a8074;
+
+    letter-spacing: 1px;
+}
+
+
+/* ---------- ABOUT ---------- */
+
+.about {
+    padding: 130px 8%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 90px;
+
+    align-items: center;
+
+    background: #e9dfd0;
+}
+
+
+.about-image {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 600px;
+
+    overflow: hidden;
+
+    background: #d8cdbc;
+}
+
+
+.about-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.55);
+
+    pointer-events: none;
+}
+
+
+.about-image img {
+    width: 100%;
+
+    height: 650px;
+
+    object-fit: cover;
+
+    transition: transform 0.7s ease;
+}
+
+
+.about-image:hover img {
+    transform: scale(1.03);
+}
+
+
+.about-text {
+    max-width: 620px;
+}
+
+
+.about-text h2 {
+    font-size: clamp(50px, 5vw, 78px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    margin-bottom: 35px;
+}
+
+
+.about-intro {
+    font-size: 22px !important;
+
+    color: #3e3933 !important;
+
+    margin-bottom: 20px !important;
+}
+
+
+.about-text > p:not(.section-label) {
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    color: #625c54;
+
+    margin-bottom: 20px;
+}
+
+
+.text-link {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #a78350;
+
+    border-bottom: 1px solid #a78350;
+
+    padding-bottom: 5px;
+}
+
+
+.text-link:hover {
+    color: #211f1c;
+
+    border-color: #211f1c;
+}
+
+
+/* ========================================
+   SERVICES
+======================================== */
+
+.services {
+    padding: 105px 8%;
+
+    background: #f7f3ec;
+}
+
+
+.services .section-heading {
+    margin-bottom: 45px;
+}
+
+
+.services-list {
+    border-top: 1px solid #d5cdc1;
+}
+
+
+.service {
+    display: grid;
+
+    grid-template-columns: 65px 1.2fr 1fr;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 27px 0;
+
+    border-bottom: 1px solid #d5cdc1;
+
+    transition: 0.3s ease;
+}
+
+
+.service:hover {
+    padding-left: 12px;
+
+    background: rgba(235, 226, 211, 0.35);
+}
+
+
+.service > span {
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    color: #a78350;
+
+    letter-spacing: 2px;
+}
+
+
+.service h3 {
+    font-size: 22px;
+
+    font-weight: 400;
+}
+
+
+.service p {
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    color: #746d64;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* ========================================
+   WHY CHOOSE SAKSHAM'S STUDIO
+======================================== */
+
+.why-choose {
+    padding: 130px 8%;
+
+    background: #ebe2d3;
+
+    text-align: center;
+}
+
+
+.why-header {
+    max-width: 700px;
+
+    margin: 0 auto 65px;
+}
+
+
+.why-header h2 {
+    font-size: clamp(45px, 5vw, 70px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    margin-bottom: 25px;
+}
+
+
+.why-header h2 em {
+    color: #a78350;
+
+    font-style: italic;
+
+    font-weight: 400;
+}
+
+
+.why-intro {
+    max-width: 550px;
+
+    margin: 0 auto;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #625c54;
+}
+
+
+.why-grid {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid #d5cdc1;
+
+    border-bottom: 1px solid #d5cdc1;
+}
+
+
+.why-card {
+    min-height: 280px;
+
+    padding: 50px 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    border-right: 1px solid #d5cdc1;
+
+    transition: 0.4s ease;
+}
+
+
+.why-card:last-child {
+    border-right: none;
+}
+
+
+.why-card:hover {
+    background: #f7f3ec;
+
+    transform: translateY(-5px);
+}
+
+
+.why-number,
+.why-icon {
+    display: block;
+
+    height: 55px;
+
+    margin-bottom: 25px;
+
+    color: #a78350;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 38px;
+
+    font-weight: 400;
+}
+
+
+.why-card h3 {
+    margin-bottom: 15px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+}
+
+
+.why-card p {
+    max-width: 220px;
+
+    margin: 0 auto;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    color: #746d64;
+}
+
+
+/* ========================================
+   BOOKING
+======================================== */
+
+.booking {
+    padding: 140px 8%;
+
+    background: #211f1c;
+
+    color: #f7f3ec;
+}
+
+
+.booking-header {
+    max-width: 850px;
+
+    margin-bottom: 80px;
+}
+
+
+.booking-header .section-label {
+    color: #b79564;
+}
+
+
+.booking-header h2 {
+    font-size: clamp(55px, 6vw, 90px);
+
+    font-weight: 400;
+
+    line-height: 0.95;
+}
+
+
+.booking-header h2 em {
+    color: #b79564;
+
+    font-style: italic;
+}
+
+
+.booking-intro {
+    max-width: 500px;
+
+    margin-top: 30px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #c5beb5;
+}
+
+
+.booking-content {
+    display: grid;
+
+    grid-template-columns: 1.5fr 0.8fr;
+
+    gap: 100px;
+
+    align-items: start;
+}
+
+
+.booking-form {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 35px 25px;
+}
+
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+
+.form-group label {
+    margin-bottom: 10px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #b79564;
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 15px 0;
+
+    background: transparent;
+
+    border: none;
+
+    border-bottom: 1px solid #5c5751;
+
+    outline: none;
+
+    color: #f7f3ec;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    transition: 0.3s ease;
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #77716a;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-bottom-color: #b79564;
+}
+
+
+.form-group select {
+    cursor: pointer;
+}
+
+
+.form-group select option {
+    background: #211f1c;
+
+    color: #f7f3ec;
+}
+
+
+.form-group textarea {
+    resize: vertical;
+
+    min-height: 120px;
+}
+
+
+.booking-button {
+    grid-column: 1 / -1;
+
+    justify-self: start;
+
+    margin-top: 10px;
+
+    padding: 17px 35px;
+
+    border: 1px solid #f7f3ec;
+
+    background: #f7f3ec;
+
+    color: #211f1c;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: 0.4s ease;
+}
+
+
+.booking-button:hover {
+    background: #b79564;
+
+    border-color: #b79564;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+.booking-contact {
+    padding-left: 45px;
+
+    border-left: 1px solid #4b4742;
+}
+
+
+.booking-contact .section-label {
+    color: #b79564;
+}
+
+
+.booking-contact h3 {
+    margin: 15px 0 25px;
+
+    font-size: clamp(35px, 4vw, 55px);
+
+    font-weight: 400;
+
+    line-height: 1;
+}
+
+
+.booking-contact h3 em {
+    color: #b79564;
+
+    font-style: italic;
+}
+
+
+.booking-contact > p:not(.section-label) {
+    max-width: 300px;
+
+    margin-bottom: 35px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    color: #aaa39b;
+}
+
+
+.contact-link {
+    display: block;
+
+    width: fit-content;
+
+    margin-bottom: 20px;
+
+    padding-bottom: 5px;
+
+    border-bottom: 1px solid #706960;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #f7f3ec;
+
+    transition: 0.3s ease;
+}
+
+
+.contact-link:hover {
+    color: #b79564;
+
+    border-color: #b79564;
+
+    padding-left: 5px;
+}
+
+
+/* ---------- CONTACT ---------- */
+
+.contact {
+    padding: 150px 8%;
+
+    text-align: center;
+
+    background: #211f1c;
+
+    color: #f7f3ec;
+}
+
+
+.contact .section-label {
+    color: #b79564;
+}
+
+
+.contact h2 {
+    font-size: clamp(50px, 6vw, 85px);
+
+    font-weight: 400;
+
+    line-height: 1;
+}
+
+
+.contact h2 em {
+    color: #b79564;
+}
+
+
+.contact > p:not(.section-label) {
+    margin: 30px auto;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    color: #c5beb5;
+}
+
+
+.contact-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+
+.contact .button.primary {
+    background: #f7f3ec;
+
+    color: #211f1c;
+}
+
+
+.contact .button.primary:hover {
+    background: #b79564;
+
+    color: white;
+}
+
+
+.contact .button.secondary {
+    border-color: #f7f3ec;
+
+    color: #f7f3ec;
+}
+
+
+.contact .button.secondary:hover {
+    background: #f7f3ec;
+
+    color: #211f1c;
+}
+
+
+.instagram {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #b79564;
+
+    border-bottom: 1px solid #b79564;
+
+    padding-bottom: 5px;
+}
+
+
+.instagram:hover {
+    color: #f7f3ec;
+
+    border-color: #f7f3ec;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    padding: 45px 8%;
+
+    background: #171614;
+
+    color: #d8d0c5;
+
+    text-align: center;
+}
+
+
+.footer-logo {
+    font-size: 20px;
+
+    letter-spacing: 5px;
+}
+
+
+footer p {
+    margin-top: 8px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: #91897f;
+}
+
+
+footer .copyright {
+    margin-top: 25px;
+
+    font-size: 9px;
+
+    color: #706960;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 0 4%;
+    }
+
+
+    .navbar nav {
+        gap: 15px;
+    }
+
+
+    .nav-button {
+        display: none;
+    }
+
+
+    .hero {
+        padding: 80px 6%;
+    }
+
+
+    .about {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+
+    .about-image {
+        max-width: 700px;
+    }
+
+
+    .about-image img {
+        height: 600px;
+    }
+
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* SERVICES */
+
+    .service {
+        grid-template-columns: 60px 1fr;
+
+        gap: 15px;
+    }
+
+
+    .service p {
+        grid-column: 2;
+    }
+
+
+    /* WHY */
+
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .why-card:nth-child(2) {
+        border-right: none;
+    }
+
+
+    .why-card:nth-child(1),
+    .why-card:nth-child(2) {
+        border-bottom: 1px solid #d5cdc1;
+    }
+
+
+    /* BOOKING */
+
+    .booking-content {
+        grid-template-columns: 1fr;
+
+        gap: 70px;
+    }
+
+
+    .booking-contact {
+        padding-left: 0;
+
+        padding-top: 50px;
+
+        border-left: none;
+
+        border-top: 1px solid #4b4742;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        min-height: auto;
+
+        padding: 20px;
+
+        flex-wrap: wrap;
+
+        gap: 20px;
+    }
+
+
+    .navbar nav {
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 15px;
+
+        flex-wrap: wrap;
+    }
+
+
+    .navbar nav a {
+        font-size: 9px;
+    }
+
+
+    .logo span {
+        font-size: 17px;
+
+        letter-spacing: 4px;
+    }
+
+
+    .logo small {
+        font-size: 7px;
+
+        letter-spacing: 4px;
+    }
+
+
+    .hero {
+        min-height: 700px;
+
+        padding: 70px 25px;
+
+        background: #f7f3ec;
+    }
+
+
+    .hero h1 {
+        font-size: 55px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .hero-text {
+        font-size: 14px;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .hero-scroll {
+        display: none;
+    }
+
+
+    .intro {
+        padding: 100px 25px;
+    }
+
+
+    .intro h2 {
+        font-size: 45px;
+    }
+
+
+    .portfolio,
+    .services,
+    .about {
+        padding: 90px 25px;
+    }
+
+
+    .section-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+
+    .portfolio-grid {
+        gap: 35px;
+    }
+
+
+    .photo-placeholder {
+        height: 400px;
+    }
+
+
+    .about {
+        gap: 50px;
+    }
+
+
+    .about-image img {
+        height: 500px;
+    }
+
+
+    .about-text h2 {
+        font-size: 55px;
+    }
+
+
+    /* SERVICES MOBILE */
+
+    .services {
+        padding: 85px 25px;
+    }
+
+
+    .services .section-heading {
+        margin-bottom: 35px;
+    }
+
+
+    .service {
+        grid-template-columns: 40px 1fr;
+
+        gap: 12px;
+
+        padding: 23px 0;
+    }
+
+
+    .service > span {
+        font-size: 9px;
+    }
+
+
+    .service h3 {
+        font-size: 19px;
+    }
+
+
+    .service p {
+        grid-column: 2;
+
+        font-size: 10px;
+
+        line-height: 1.6;
+    }
+
+
+    /* WHY */
+
+    .why-choose {
+        padding: 90px 25px;
+    }
+
+
+    .why-header {
+        margin-bottom: 45px;
+    }
+
+
+    .why-header h2 {
+        font-size: 45px;
+    }
+
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .why-card {
+        min-height: auto;
+
+        padding: 40px 25px;
+
+        border-right: none;
+
+        border-bottom: 1px solid #d5cdc1;
+    }
+
+
+    .why-card:last-child {
+        border-bottom: none;
+    }
+
+
+    /* BOOKING */
+
+    .booking {
+        padding: 100px 25px;
+    }
+
+
+    .booking-header {
+        margin-bottom: 55px;
+    }
+
+
+    .booking-header h2 {
+        font-size: 52px;
+    }
+
+
+    .booking-content {
+        gap: 60px;
+    }
+
+
+    .booking-form {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+
+    .form-group.full-width {
+        grid-column: auto;
+    }
+
+
+    .booking-button {
+        grid-column: auto;
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .booking-contact {
+        padding-top: 45px;
+    }
+
+
+    .booking-contact h3 {
+        font-size: 42px;
+    }
+
+
+    /* CONTACT */
+
+    .contact {
+        padding: 100px 25px;
+    }
+
+
+    .contact-buttons {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    .contact-buttons .button {
+        width: 100%;
+
+        max-width: 300px;
+
+        text-align: center;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 40px 25px;
+    }
+
+
+    .footer-logo {
+        font-size: 17px;
+
+        letter-spacing: 4px;
+    }
+
+}
+/* ========================================
+   CLIENT REVIEWS
+======================================== */
+
+.reviews {
+    padding: 130px 8%;
+    background: #f7f3ec;
+}
+
+
+.reviews-header {
+    max-width: 750px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+
+.reviews-header h2 {
+    font-size: clamp(45px, 5vw, 70px);
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+
+.reviews-header h2 em {
+    color: #a78350;
+    font-style: italic;
+}
+
+
+.reviews-intro {
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #625c54;
+}
+
+
+/* ---------- RATING SUMMARY ---------- */
+
+.rating-summary {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+
+.rating-number {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 70px;
+    line-height: 1;
+}
+
+
+.rating-stars {
+    margin-top: 12px;
+    color: #a78350;
+    font-size: 25px;
+    letter-spacing: 5px;
+}
+
+
+.rating-summary p {
+    margin-top: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #8a8074;
+    letter-spacing: 1px;
+}
+
+
+/* ---------- REVIEWS GRID ---------- */
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto 100px;
+}
+
+
+.review-card {
+    padding: 40px 35px;
+    background: #ebe2d3;
+    border: 1px solid #ded5c8;
+    transition: 0.4s ease;
+}
+
+
+.review-card:hover {
+    transform: translateY(-5px);
+    background: #e5dbcc;
+}
+
+
+.review-stars {
+    color: #a78350;
+    font-size: 18px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+
+.review-text {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #4f4942;
+    margin-bottom: 30px;
+}
+
+
+.review-author {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.review-author strong {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+
+.review-author span {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    color: #a78350;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+
+/* ---------- WRITE REVIEW ---------- */
+
+.write-review {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 65px;
+    background: #211f1c;
+    color: #f7f3ec;
+}
+
+
+.write-review .section-label {
+    color: #b79564;
+}
+
+
+.write-review h3 {
+    font-size: clamp(40px, 5vw, 60px);
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 45px;
+}
+
+
+.write-review h3 em {
+    color: #b79564;
+    font-style: italic;
+}
+
+
+/* ---------- REVIEW FORM ---------- */
+
+.review-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+
+.review-form-group label {
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #b79564;
+}
+
+
+.review-form-group input,
+.review-form-group textarea {
+    width: 100%;
+    padding: 15px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #5c5751;
+    outline: none;
+    color: #f7f3ec;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+
+.review-form-group input::placeholder,
+.review-form-group textarea::placeholder {
+    color: #77716a;
+}
+
+
+.review-form-group input:focus,
+.review-form-group textarea:focus {
+    border-bottom-color: #b79564;
+}
+
+
+.review-form-group textarea {
+    resize: vertical;
+}
+
+
+/* ---------- STAR INPUT ---------- */
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    width: fit-content;
+}
+
+
+.star-rating input {
+    display: none;
+}
+
+
+.star-rating label {
+    margin: 0;
+    padding: 5px;
+    color: #5c5751;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input:checked ~ label {
+    color: #b79564;
+}
+
+
+/* ---------- REVIEW BUTTON ---------- */
+
+.review-button {
+    padding: 16px 30px;
+    border: 1px solid #f7f3ec;
+    background: #f7f3ec;
+    color: #211f1c;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+
+.review-button:hover {
+    background: #b79564;
+    border-color: #b79564;
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   REVIEWS MOBILE
+======================================== */
+
+@media (max-width: 900px) {
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .reviews {
+        padding: 90px 25px;
+    }
+
+
+    .reviews-header h2 {
+        font-size: 45px;
+    }
+
+
+    .rating-number {
+        font-size: 60px;
+    }
+
+
+    .write-review {
+        padding: 40px 25px;
+    }
+
+
+    .write-review h3 {
+        font-size: 42px;
+    }
+
+}
+
+/* ========================================
+   RESPONSIVE FIXES
+   LAPTOP, iPAD, TABLET AND MOBILE
+======================================== */
+
+/* ---------- HERO FIX FOR ALL SCREENS ---------- */
+
+.hero {
+    background-color: #f7f3ec;
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(247, 243, 236, 0.97) 0%,
+            rgba(247, 243, 236, 0.85) 35%,
+            rgba(247, 243, 236, 0.25) 70%,
+            rgba(247, 243, 236, 0.05) 100%
+        ),
+        url("images/hero.jpg");
+    background-size: cover, cover;
+    background-position: center, right center;
+    background-repeat: no-repeat, no-repeat;
+}
+
+.hero::before {
+    content: "SS";
+    position: absolute;
+    right: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(180px, 25vw, 380px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -12px;
+    color: rgba(167, 131, 80, 0.24);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 760px;
+}
+
+
+/* ---------- LAPTOP AND DESKTOP ---------- */
+/* Screens wider than 1024px */
+
+@media (min-width: 1025px) {
+
+    .hero {
+        min-height: calc(100vh - 82px);
+        padding: 90px 8%;
+    }
+
+    .navbar {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .reviews-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+
+/* ---------- iPAD LANDSCAPE / SMALL LAPTOP ---------- */
+/* Screens from 901px to 1024px */
+
+@media (min-width: 901px) and (max-width: 1024px) {
+
+    .navbar {
+        padding: 0 4%;
+        gap: 15px;
+    }
+
+    .navbar nav {
+        gap: 15px;
+    }
+
+    .navbar nav a {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .nav-button {
+        padding: 10px 14px;
+        font-size: 9px;
+    }
+
+    .hero {
+        min-height: 650px;
+        padding: 80px 6%;
+    }
+
+    .hero h1 {
+        font-size: clamp(60px, 7vw, 80px);
+    }
+
+    .hero::before {
+        right: 4%;
+        font-size: clamp(200px, 27vw, 300px);
+    }
+
+    .portfolio,
+    .services,
+    .about,
+    .why-choose,
+    .booking,
+    .reviews,
+    .contact {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
+    }
+
+    .photo-placeholder {
+        height: 400px;
+    }
+
+    .about {
+        gap: 45px;
+    }
+
+    .booking-content {
+        gap: 45px;
+    }
+
+    .reviews-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* ---------- iPAD PORTRAIT / TABLET ---------- */
+/* Screens from 651px to 900px */
+
+@media (min-width: 651px) and (max-width: 900px) {
+
+    .navbar {
+        padding: 18px 4%;
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    .navbar nav {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .navbar nav a {
+        font-size: 10px;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .hero {
+        min-height: 650px;
+        padding: 75px 6%;
+        background-position: center, 65% center;
+    }
+
+    .hero h1 {
+        font-size: clamp(52px, 8vw, 72px);
+        letter-spacing: -3px;
+    }
+
+    .hero-text {
+        max-width: 450px;
+    }
+
+    .hero::before {
+        right: 3%;
+        font-size: clamp(170px, 27vw, 250px);
+        letter-spacing: -8px;
+    }
+
+    .portfolio,
+    .services,
+    .about,
+    .why-choose,
+    .booking,
+    .reviews,
+    .contact {
+        padding: 90px 6%;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-placeholder {
+        height: 450px;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .about-image img {
+        height: 550px;
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .booking-content {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .booking-contact {
+        padding: 40px 0 0;
+        border-left: none;
+        border-top: 1px solid #4b4742;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ---------- MOBILE ---------- */
+/* Screens up to 650px */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 18px 20px;
+        gap: 18px;
+    }
+
+    .navbar nav {
+        width: 100%;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .navbar nav a {
+        font-size: 9px;
+        letter-spacing: 0.8px;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .hero {
+        min-height: 680px;
+        padding: 65px 25px;
+        align-items: center;
+        background-image:
+            linear-gradient(
+    to right,
+    rgba(247, 243, 236, 0.82) 0%,
+    rgba(247, 243, 236, 0.58) 65%,
+    rgba(247, 243, 236, 0.20) 100%
+)
+            url("images/hero.jpg");
+        background-size: cover, cover;
+        background-position: center, 62% center;
+        background-repeat: no-repeat, no-repeat;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 11vw, 58px);
+        letter-spacing: -2px;
+        line-height: 0.98;
+    }
+
+    .eyebrow {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        margin-top: 25px;
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: 25px;
+    }
+
+    .hero-buttons .button {
+        padding: 14px 20px;
+        font-size: 9px;
+    }
+
+    .hero::before {
+        right: 3%;
+        top: 75%;
+        font-size: 135px;
+        letter-spacing: -7px;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+    .intro,
+    .portfolio,
+    .services,
+    .about,
+    .why-choose,
+    .booking,
+    .reviews,
+    .contact {
+        padding: 75px 22px;
+    }
+
+    .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .section-heading h2,
+    .intro h2,
+    .why-header h2,
+    .reviews-header h2 {
+        font-size: 42px;
+    }
+
+    .portfolio-grid,
+    .about,
+    .booking-content,
+    .booking-form,
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-grid {
+        gap: 35px;
+    }
+
+    .photo-placeholder {
+        height: 380px;
+    }
+
+    .about {
+        gap: 35px;
+    }
+
+    .about-image img {
+        height: 430px;
+    }
+
+    .service {
+        grid-template-columns: 35px minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .service p {
+        grid-column: 2;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-card {
+        border-right: none;
+        border-bottom: 1px solid #d5cdc1;
+    }
+
+    .booking-form {
+        gap: 25px;
+    }
+
+    .form-group.full-width {
+        grid-column: auto;
+    }
+
+    .booking-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .booking-contact {
+        padding: 35px 0 0;
+        border-left: none;
+        border-top: 1px solid #4b4742;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-buttons .button {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+
+    .write-review {
+        padding: 35px 22px;
+    }
+
+    .reviews-grid {
+        gap: 20px;
+    }
+
+    .review-card {
+        padding: 30px 25px;
+    }
+
+}
+
+/* FINAL HERO IMAGE FIX */
+.hero {
+    background-color: #f7f3ec !important;
+    background-image:
+        linear-gradient(
+            rgba(33, 31, 28, 0.12),
+            rgba(33, 31, 28, 0.12)
+        ),
+        url("images/hero.jpg") !important;
+    background-size: cover, cover !important;
+    background-position: center, right center !important;
+    background-repeat: no-repeat, no-repeat !important;
+}
+
+@media (max-width: 650px) {
+    .hero {
+        background-position: center, 62% center !important;
+    }
+}
+/* HOMEPAGE PORTFOLIO PHOTOS */
+
+.portfolio-photo {
+    width: 100%;
+    height: 500px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s ease;
+}
+
+.portfolio-card {
+    overflow: hidden;
+}
+
+.portfolio-card:hover .portfolio-photo {
+    transform: scale(1.03);
+}
+
+@media (max-width: 900px) {
+    .portfolio-photo {
+        height: 450px;
+    }
+}
+
+@media (max-width: 650px) {
+    .portfolio-photo {
+        height: 380px;
+    }
+}
+.hero h1 {
+    color: #D6B477;
+}
