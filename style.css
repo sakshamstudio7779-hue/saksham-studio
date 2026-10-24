@@ -200,7 +200,7 @@ textarea {
     rgba(247, 243, 236, 0.12) 70%,
     rgba(184, 147, 83, 0.712) 100%
 )
-        url("images/hero.jpg");
+        url("hero.jpg");
 
     background-size: cover, cover;
     background-position: center, right center;
@@ -2137,7 +2137,7 @@ footer .copyright {
             rgba(247, 243, 236, 0.25) 70%,
             rgba(247, 243, 236, 0.05) 100%
         ),
-        url("images/hero.jpg");
+        url("hero.jpg");
     background-size: cover, cover;
     background-position: center, right center;
     background-repeat: no-repeat, no-repeat;
@@ -2395,7 +2395,7 @@ footer .copyright {
     rgba(247, 243, 236, 0.58) 65%,
     rgba(247, 243, 236, 0.20) 100%
 )
-            url("images/hero.jpg");
+            url("hero.jpg");
         background-size: cover, cover;
         background-position: center, 62% center;
         background-repeat: no-repeat, no-repeat;
@@ -2564,7 +2564,7 @@ footer .copyright {
             rgba(33, 31, 28, 0.12),
             rgba(33, 31, 28, 0.12)
         ),
-        url("images/hero.jpg") !important;
+        url("hero.jpg") !important;
     background-size: cover, cover !important;
     background-position: center, right center !important;
     background-repeat: no-repeat, no-repeat !important;
